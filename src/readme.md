@@ -1,6 +1,9 @@
 
 # 1. Terminal session (not interactive)
 
+<details>
+    
+
 Launch ipython:
 ```
 ipython
@@ -19,7 +22,12 @@ dataset.save_to_disk( '/scratch/st-username-1/huggingface/yahma-alpaca-cleaned')
 kaggle datasets download -d lisatwyw/alpaca-trained-llms/ 
 ```
 
+</details>
+
+
 # 2. Interactive session with GPU
+
+<details>
 
 Launch ipython:
 ```
@@ -72,3 +80,5 @@ trainer = SFTTrainer(
 )
 trainer_stats = trainer.train()
 ```
+
+</details>
