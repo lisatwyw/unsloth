@@ -81,4 +81,13 @@ trainer = SFTTrainer(
 trainer_stats = trainer.train()
 ```
 
+
+Few moments later...
+
+
+## Save the fined-tuned model as single file, merger of tokenizer and model weights
+```
+model.save_pretrained_merged( 'mistral7b-16bit', tokenizer, save_method = "merged_16bit",)
+```
+
 </details>
