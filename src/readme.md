@@ -1,18 +1,38 @@
 
-# 1: Terminal session (not interactive)
+# 1. Terminal session (not interactive)
 
+Launch ipython:
 ```
 ipython
 ```
 
+## 1b. Download dataset
 ```
 from datasets import load_dataset  
 dataset = load_dataset("yahma/alpaca-cleaned")
 dataset.save_to_disk( '/scratch/st-username-1/huggingface/yahma-alpaca-cleaned')
 ```
 
-# 2: Interactive session with GPU
+## 1c. Download model
 
+```
+kaggle datasets download -d lisatwyw/alpaca-trained-llms/ 
+```
+
+# 2. Interactive session with GPU
+
+Launch ipython:
+```
+ipython
+```
+
+## 2b. Load model from disk 
+
+```
+model,tokenizer = FastLanguageModel.from_pretrained( 'not_trained/' )
+```
+
+## 2c. Load dataset from disk 
 ```
 from datasets import load_from_disk
 dataset = load_from_disk('/scratch/st-username-1/huggingface/yahma-alpaca-cleaned/')
