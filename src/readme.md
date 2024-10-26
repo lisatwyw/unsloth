@@ -96,6 +96,8 @@ model.save_pretrained_merged( 'mistral7b-16bit', tokenizer, save_method = "merge
 
 ## 3. Inference 
 
+<details>
+    
 ```
 q = alpaca_prompt.format(
     instruction, # instruction
@@ -106,4 +108,15 @@ q = alpaca_prompt.format(
 inputs = tokenizer( q, return_tensors = "pt").to("cuda")
 outputs = tokenizer.batch_decode( model.generate(**inputs, max_new_tokens = 64, use_cache = True) )
 
+q = alpaca_prompt.format(
+    instruction, # instruction
+    query, # input
+    "", # output - leave this blank for generation!
+    )
+
+inputs = tokenizer( q, return_tensors = "pt").to("cuda")
+outputs = tokenizer.batch_decode( model.generate(**inputs, max_new_tokens = 64, use_cache = True) )
+print( outputs )
 ```
+
+</details>
